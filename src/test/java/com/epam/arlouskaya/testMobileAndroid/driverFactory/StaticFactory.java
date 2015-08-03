@@ -23,7 +23,6 @@ public class StaticFactory {
 		URL[] urls = {file.toURI().toURL()};
 		ClassLoader loader = new URLClassLoader(urls);
 		ResourceBundle bundle = ResourceBundle.getBundle("driver", Locale.getDefault(), loader);
-		//ResourceBundle bundle = ResourceBundle.getBundle("driver");
 		Set<String> keys = bundle.keySet();
 		for (Iterator iterator = keys.iterator(); iterator.hasNext();) {
 			String key = (String) iterator.next();

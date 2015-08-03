@@ -29,25 +29,24 @@ public class AppTest
 	@BeforeClass
 	public void setUp() throws MalformedURLException{
 		CommandLine command = new CommandLine("cmd");
+		command.addArgument("cmd");
 		command.addArgument("/c");
-		command.addArgument("C://Program Files (x86)//Appium//node.exe");
-		command.addArgument("C://Program Files (x86)//Appium//node_modules//appium//bin//appium.js");
+		command.addArgument("D:\\Appium\\node.exe\\");
+		command.addArgument("D:\\Appium\\node_modules\\appium\\bin\\Appium.js\\");
 		command.addArgument("--address");
-		command.addArgument("0.0.0.0");
+		command.addArgument("127.0.0.1");
 		command.addArgument("--port");
-		command.addArgument("4724");
+		command.addArgument("4723");
 		command.addArgument("--no-reset");
 		command.addArgument("--log");
-		command.addArgument("C://Users//...//log//appiumLogs.txt");
+		command.addArgument("C:\\appiumLogs.txt\\");
 		DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
 		DefaultExecutor executor = new DefaultExecutor();
 		executor.setExitValue(1);
+		System.out.println("driver being created...");
 		try {
 			executor.execute(command, resultHandler);
-		} catch (ExecuteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -64,6 +63,6 @@ public class AppTest
 	
 	@AfterClass
     public void tearDown() throws Exception {
-        if (driver != null) driver.quit();
+      //  if (driver != null) driver.quit();
     }
 }

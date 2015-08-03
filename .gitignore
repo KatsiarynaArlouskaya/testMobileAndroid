@@ -3,6 +3,7 @@
 .gradle
 bin/
 tmp/
+test-output/
 *.tmp
 *.bak
 *.swp
